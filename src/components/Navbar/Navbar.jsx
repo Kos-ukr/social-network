@@ -16,13 +16,13 @@ const Navbar = () => {
             </div>
 
             <div className={s.item}>
-                <a href='#1'>News</a>
+                <a>News</a>
             </div>
             <div className={s.item}>
-                <a href='#1'>Music</a>
+                <a>Music</a>
             </div>
             <div className={s.item}>
-                <a href='#1'>Settings</a>
+                <a>Settings</a>
             </div>
         </nav>
     )
