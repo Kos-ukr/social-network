@@ -3,7 +3,6 @@ import styles from "./users.module.css";
 import userPhoto from "../../assets/images/user.png";
 import {NavLink} from "react-router-dom";
 import * as axios from "axios";
-import {toggleFollowingProgress} from "../../redux/users-reducer";
 
 let Users = (props) => {
 
@@ -30,7 +29,7 @@ let Users = (props) => {
                     <div>
                        <NavLink to={'/profile/' + u.id}>
                         <img src={u.photos.small != null ? u.photos.small : userPhoto}
-                             className={styles.userPhoto}/>
+                             className={styles.userPhoto} alt=''/>
                        </NavLink>
                     </div>
                     <div>
@@ -44,7 +43,7 @@ let Users = (props) => {
                                     }
                                 })
                                     .then(response => {
-                                        if (response.data.resultCode == 0) {
+                                        if (response.data.resultCode === 0) {
                                             props.unfollow(u.id);
                                         }
                                         props.toggleFollowingProgress(false, u.id);
@@ -62,7 +61,7 @@ let Users = (props) => {
                                     }
                                 })
                                     .then(response => {
-                                        if (response.data.resultCode == 0) {
+                                        if (response.data.resultCode === 0) {
                                             props.follow(u.id);
                                         }
                                         props.toggleFollowingProgress(false, u.id);
